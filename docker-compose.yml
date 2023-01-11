@@ -21,7 +21,7 @@ services:
 
   plextraktwatch:
     image: ghcr.io/taxel/plextraktsync:latest
-    container_name: plextraktsync
+    container_name: plextraktwatch
     command: watch
     volumes:
       - /home/mediaserver/.custom/plextraktsync/config:/app/config
