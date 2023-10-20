@@ -13,14 +13,14 @@ services:
       ofelia.job-run.plextraktsync.container: "plextraktsync"
 
   plextraktsync:
-    image: ghcr.io/taxel/plextraktsync:0.26
+    image: ghcr.io/taxel/plextraktsync:latest
     container_name: plextraktsync
     command: sync
     volumes:
       - /home/mediaserver/.custom/plextraktsync/config:/app/config
 
   plextraktwatch:
-    image: ghcr.io/taxel/plextraktsync:0.26
+    image: ghcr.io/taxel/plextraktsync:latest
     container_name: plextraktwatch
     command: watch
     volumes:
