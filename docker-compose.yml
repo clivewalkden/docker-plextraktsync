@@ -29,7 +29,7 @@ services:
     image: ghcr.io/taxel/plextraktsync:latest
     container_name: plextraktwatch
     command: watch
-    restart: unless-stopped
+    restart: on-failure:2
     volumes:
       - /home/mediaserver/.custom/plextraktwatch/config:/app/config
     environment:
