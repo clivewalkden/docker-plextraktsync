@@ -31,7 +31,7 @@ services:
     command: watch
     restart: unless-stopped
     volumes:
-      - /home/mediaserver/.custom/plextraktsync/config:/app/config
+      - /home/mediaserver/.custom/plextraktwatch/config:/app/config
     environment:
       - PUID=1000
       - PGID=1000
