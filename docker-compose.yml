@@ -17,7 +17,12 @@ services:
     image: ghcr.io/taxel/plextraktsync:latest
     container_name: plextraktsync
     command: sync
-    restart: unless-stopped
+    # One-shot job: ofelia starts it every 6h. Any restart policy other than "no"
+    # re-runs it as soon as it exits, which hammered the Plex database.
+    restart: "no"
+    # This plex.direct name does not resolve from any DNS server, so map it to Plex directly.
+    extra_hosts:
+      - "192-168-0-202.c686a8e06310464f842920ee93c81d20.plex.direct:192.168.0.202"
     volumes:
       - /home/mediaserver/.custom/plextraktsync/config:/app/config
     environment:
